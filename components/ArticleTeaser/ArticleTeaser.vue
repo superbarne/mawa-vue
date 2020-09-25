@@ -2,17 +2,35 @@
   <article class="article-teaser">
     <header class="article-teaser__header">
       <h2 class="article-teaser__header-title">
-        {title} Teaser - Headline 2
+        {{ post.fields.title }}
       </h2>
-      <ArticleMetaBar class="article-teaser__header-meta" />
+      <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-teaser__body">
-      <img src="https://via.placeholder.com/600x400" alt="Image" class="article-teaser__media">
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem sequi eaque, ad harum autem vitae, eligendi molestias obcaecati tempore fugit alias asperiores ipsa ab necessitatibus sunt officiis id illo itaque?</p>
+      <RichText :content="content" />
     </section>
   </article>
 </template>
 
 <style lang="scss">
-  @import "./ArticleTeaser.scss";
+@import './ArticleTeaser.scss';
 </style>
+
+<script>
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    content () {
+      return {
+        ...this.post.fields.content,
+        content: [this.post.fields.content.content[0]]
+      }
+    }
+  }
+}
+</script>

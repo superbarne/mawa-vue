@@ -1,7 +1,6 @@
 <template>
   <b-container>
-    <ArticleTeaser />
-    <pre>{{ posts }}</pre>
+    <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
   </b-container>
 </template>
 
