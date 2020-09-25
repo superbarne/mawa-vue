@@ -24,6 +24,7 @@
         </a>
       </div>
     </div>
+    <pre>{{ posts }}</pre>
   </div>
 </template>
 
