@@ -28,5 +28,20 @@
 </template>
 
 <script>
-export default {}
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
+
+export default {
+  async asyncData ({ env }) {
+    const { items: posts } = await client.getEntries({
+      content_type: 'post',
+      order: '-sys.createdAt'
+    })
+    console.log(posts)
+
+    return {
+      posts
+    }
+  }
+}
 </script>
