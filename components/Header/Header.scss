@@ -1,9 +1,31 @@
-// @import '../../styles/mixins';
+@import '../../styles/mixins';
 
 .navbar {
-    // background-color: $primary;
+    background-color: $primary;
 
-	// .navbar-brand {
-	// 	height: 60px;
-    // }
+	.navbar-brand {        
+		display: block;
+        position: absolute;
+        top: 0;
+		background-image: url("~assets/logo.png");
+		width: 53px;
+		height: 60px;
+		z-index: 999;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+        border-radius: 0;
+    }
+
+	.navbar-collapse {
+		padding: 0;
+		
+		@media (max-width: 767px) {
+			box-shadow: none;
+		}
+		@media (min-width: 768px) {
+			padding-left: 53px;
+		}
+	}
 }
