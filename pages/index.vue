@@ -37,7 +37,6 @@ export default {
       content_type: 'post',
       order: '-sys.createdAt'
     })
-    console.log(posts)
 
     return {
       posts
