@@ -1,0 +1,50 @@
+@import '../../styles/mixins';
+
+.article-detail {
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(20,20,20,.2);
+    margin-bottom: getSpace(2);
+    padding: getSpace(2);
+    color: $primary;
+
+    .title {
+        margin: 0 0 getSpace(1) 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .tags {
+        font-size: 12px;
+        margin-bottom: getSpace(2);
+        text-transform: uppercase;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-right: getSpace(1);
+
+            i {
+                color: $primary;
+            }
+
+            span {
+                // margin-left: getSpace(1);
+            }
+
+            a {
+                color: $secondary;
+                // margin-left: getSpace(1);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .content {
+        .media {
+            width: 100%;
+        }
+    }
+}

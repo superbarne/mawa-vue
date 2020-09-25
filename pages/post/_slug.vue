@@ -1,5 +1,8 @@
 <template>
   <div>
+    <b-container>
+      <ArticleDetail />
+    </b-container>
     <RichTextRenderer v-if="post" :document="post.fields.content" />
     <pre>{{ post }}</pre>
   </div>
