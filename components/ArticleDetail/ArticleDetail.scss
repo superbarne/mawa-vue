@@ -7,44 +7,51 @@
     padding: getSpace(2);
     color: $primary;
 
-    .title {
-        margin: 0 0 getSpace(1) 0;
-        text-transform: uppercase;
-        font-weight: 700;
+    &__header {
+        padding: 0 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+		@media (min-width: 768px) {
+            padding: 0 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        &-title {
+            margin: 0 0 getSpace(1) 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
     }
 
-    .tags {
-        font-size: 12px;
-        margin-bottom: getSpace(2);
-        text-transform: uppercase;
-        padding: 0;
+    &__body {
+        padding: 0 15px;
+        margin-bottom: 10px;
 
-        li {
-            display: inline-block;
-            margin-right: getSpace(1);
+		@media (min-width: 768px) {
+            padding: 0 50px;
+            margin-bottom: 40px;
+        }
 
-            i {
-                color: $primary;
-            }
-
-            span {
-                // margin-left: getSpace(1);
-            }
-
-            a {
-                color: $secondary;
-                // margin-left: getSpace(1);
-
-                &:hover {
-                    text-decoration: underline;
-                }
+        p {
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
 
-    .content {
-        .media {
-            width: 100%;
+    &__footer {
+        padding: 0 15px;
+        margin-bottom: 10px;
+
+		@media (min-width: 768px) {
+            padding: 0 50px;
+            margin-bottom: 40px;
         }
+    }
+
+    &__media {
+        width: 100%;
     }
 }

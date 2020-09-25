@@ -7,51 +7,28 @@
     padding: getSpace(2);
     color: $primary;
 
-    .title {
-        margin: 0 0 getSpace(1) 0;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-
-    .tags {
-        font-size: 12px;
-        margin-bottom: getSpace(2);
-        text-transform: uppercase;
-        padding: 0;
-
-        li {
-            display: inline-block;
-            margin-right: getSpace(1);
-
-            i {
-                color: $primary;
-            }
-
-            span {
-                // margin-left: getSpace(1);
-            }
-
-            a {
-                color: $secondary;
-                // margin-left: getSpace(1);
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+    &__header {
+        &-title {
+            margin: 0 0 getSpace(1) 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    
+        &-meta {
+            margin-bottom: 10px;
         }
     }
 
-    .content {
-        .media {
-            width: 100%;
-            margin-bottom: getSpace(2);
-        }
-
+    &__body {
         p {
             &:last-child {
                 margin-bottom: 0;
             }
         }
+    }
+
+    &__media {
+        width: 100%;
+        margin-bottom: getSpace(2);
     }
 }

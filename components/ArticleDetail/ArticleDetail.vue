@@ -1,34 +1,19 @@
 <template>
   <article class="article-detail">
-    <header>
-      <h2 class="title">
-        {title} Detail
-      </h2>
-      <ul class="tags">
-        <li>
-          <i class="fas fa-clock" />
-          <span>
-            {new Intl.DateTimeFormat("de-DE", {
-            year: "numeric",
-            month: "long",
-            day: "2-digit"
-            }).format(createdAtDate)}
-          </span>
-        </li>
-        <li>
-          <i class="fas fa-star" />
-          <a href="/">Profile</a>
-        </li>
-        <li>
-          <i class="fas fa-tags" />
-          <a href="/">#Tag1</a>
-          <a href="/">#Tag2</a>
-        </li>
-      </ul>
+    <img src="https://via.placeholder.com/600x400" alt="Image" class="article-detail__media">
+    <header class="article-detail__header">
+      <h1 class="article-detail__header-title">
+        {title} Detail - Headline 1
+      </h1>
+      <ArticleMetaBar class="article-detail__header-meta" />
     </header>
-    <section class="content">
-      <img src="https://via.placeholder.com/600x400" alt="Image" class="media">
+    <section class="article-detail__body">
+      <h2>Body - Headline 2</h2>
       <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem sequi eaque, ad harum autem vitae, eligendi molestias obcaecati tempore fugit alias asperiores ipsa ab necessitatibus sunt officiis id illo itaque?</p>
+    </section>
+    <section class="article-detail__footer">
+      <h2>Footer - Headline 2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime saepe ex eveniet sint. Pariatur qui modi blanditiis id culpa repudiandae expedita cupiditate aspernatur totam? In corporis architecto ut molestiae aliquam!</p>
     </section>
   </article>
 </template>
