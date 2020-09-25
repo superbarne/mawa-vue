@@ -26,14 +26,14 @@
 
           <b-navbar-nav class="ml-auto">
             <b-navbar-nav>
-              <b-nav-item href="#">
-                Facebook
+              <b-nav-item href="https://www.facebook.com/MoppedAnWeltAus" target="_blank">
+                <i class="fab fa-facebook-f" />
               </b-nav-item>
-              <b-nav-item href="#">
-                Instagram
+              <b-nav-item href="https://www.instagram.com/moppedanweltaus" target="_blank">
+                <i class="fab fa-instagram" />
               </b-nav-item>
-              <b-nav-item href="#">
-                YouTube
+              <b-nav-item href="https://www.youtube.com/user/MoppedAnWeltAus" target="_blank">
+                <i class="fab fa-youtube" />
               </b-nav-item>
             </b-navbar-nav>
           </b-navbar-nav>
