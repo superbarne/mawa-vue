@@ -1,3 +1,6 @@
+
+const config = require('./.contentful.json')
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -37,5 +40,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  env: {
+    CTF_SPACE_ID: config.spaceId,
+    CTF_CDA_ACCESS_TOKEN: config.accessToken
   }
 }
