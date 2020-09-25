@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <ArticleTeaser />
     <Nuxt />
   </div>
 </template>
