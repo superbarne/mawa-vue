@@ -1,5 +1,9 @@
 @import '../../styles/mixins';
 
+body {
+    padding-top: 60px;
+}
+
 .navbar {
     background-color: $primary;
     padding: 10px 0;
