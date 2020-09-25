@@ -1,10 +1,8 @@
 <template>
   <div>
-    <b-navbar toggleable="md" type="dark" variant="info" fixed="top">
+    <b-navbar toggleable="md" type="dark" fixed="top">
       <b-container>
-        <b-navbar-brand href="#">
-          <img src="@/assets/logo.png" alt="">
-        </b-navbar-brand>
+        <b-navbar-brand href="#" />
 
         <b-navbar-toggle target="nav-collapse" />
 
