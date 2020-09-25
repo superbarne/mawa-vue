@@ -2,7 +2,7 @@
   <article class="article-teaser">
     <header>
       <h2 class="title">
-        {title}
+        {title} Teaser
       </h2>
       <ul class="tags">
         <li>
