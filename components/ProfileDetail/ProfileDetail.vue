@@ -15,6 +15,16 @@
       <b-col cols="12" md="4">
         <div class="sidebar">
           Sidebar
+          <div
+            v-if="profile.fields.facebook"
+            class="fb-page item facebook"
+            :data-href="profile.fields.facebook"
+            data-width="480"
+            data-hide-cover="false"
+            data-show-facepile="false"
+            data-show-posts="true"
+            height="800px"
+          />
         </div>
       </b-col>
     </b-row>
@@ -26,6 +36,7 @@
 </style>
 
 <script>
+
 export default {
   props: {
     profile: {
