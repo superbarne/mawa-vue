@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="md" type="dark" fixed="top">
       <b-container>
-        <b-navbar-brand href="#">
+        <b-navbar-brand to="/">
           <img src="@/assets/logo.png" alt="Logo">
         </b-navbar-brand>
 
