@@ -6,7 +6,7 @@
           {{ post.fields.title }}
         </h2>
       </router-link>
-      <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
+      <ArticleMetaBar class="article-teaser__header-meta" :profiles="post.fields.profiles" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-teaser__body">
       <RichText :content="content" />

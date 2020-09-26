@@ -10,7 +10,7 @@
     </div>
     <b-row>
       <b-col cols="12" md="8">
-        Article
+        <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
       </b-col>
       <b-col cols="12" md="4">
         <div class="sidebar">
@@ -24,3 +24,18 @@
 <style lang="scss">
   @import "./ProfileDetail.scss";
 </style>
+
+<script>
+export default {
+  props: {
+    profile: {
+      type: Object,
+      required: true
+    },
+    posts: {
+      type: Array,
+      default: () => []
+    }
+  }
+}
+</script>
