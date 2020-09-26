@@ -1,7 +1,7 @@
 <template>
   <div class="profile-detail">
     <div class="profile-detail__cover">
-      <img src="https://via.placeholder.com/1080x400" alt="Image" class="profile-detail__cover-media">
+      <img v-if="headerImage" :src="headerImage" alt="Image" class="profile-detail__cover-media">
       <div class="profile-detail__cover-caption">
         <h3 class="profile-detail__cover-title">
           {{ profile.fields.name }}
@@ -12,6 +12,7 @@
       <b-col cols="12" md="8">
         <pre>{{ profile }}</pre>
         <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
+        <infinite-loading @infinite="$emit('posts-load-more', $event)" />
       </b-col>
       <b-col cols="12" md="4">
         <div class="sidebar">
@@ -22,6 +23,16 @@
             <a v-if="profile.fields.vimeo" class="btn vimeo" href="/">Vimeo</a>
           </div>
           Sidebar
+          <div
+            v-if="profile.fields.facebook"
+            class="fb-page item facebook"
+            :data-href="profile.fields.facebook"
+            data-width="480"
+            data-hide-cover="false"
+            data-show-facepile="false"
+            data-show-posts="true"
+            height="800px"
+          />
         </div>
       </b-col>
     </b-row>
@@ -33,6 +44,7 @@
 </style>
 
 <script>
+
 export default {
   props: {
     profile: {
@@ -42,6 +54,19 @@ export default {
     posts: {
       type: Array,
       default: () => []
+    }
+  },
+  computed: {
+    headerImage () {
+      const content = this.profile.fields.content.content
+      if (!content[0]) { return null }
+      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+      if (hyperlink) {
+        if (hyperlink.data.uri.includes('s3.eu-central')) {
+          return hyperlink.data.uri
+        }
+      }
+      return null
     }
   }
 }
