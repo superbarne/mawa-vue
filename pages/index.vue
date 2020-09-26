@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <ArticleSlider />
+    <ArticleSlider :slider-posts="sliderPosts" />
     <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
     <infinite-loading @infinite="infiniteHandler" />
   </b-container>
@@ -18,8 +18,15 @@ export default {
       order: '-fields.createdAt'
     })
 
+    const sliderCatagoryId = '563e3302f6b2ab1d1a18938c'
+    const { items: sliderPosts } = await client.getEntries({
+      content_type: 'post',
+      'fields.categories.sys.id': sliderCatagoryId
+    })
+
     return {
-      posts
+      posts,
+      sliderPosts
     }
   },
   data () {
