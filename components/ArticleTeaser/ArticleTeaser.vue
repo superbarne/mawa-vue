@@ -1,10 +1,11 @@
 <template>
   <article class="article-teaser">
     <header class="article-teaser__header">
-      <h2 class="article-teaser__header-title">
-        <router-link :to="`/post/${post.fields.slug}`">
+      <router-link :to="`/post/${post.fields.slug}`">
+        <h2 class="article-teaser__header-title">
           {{ post.fields.title }}
-        </router-link>
+        </h2>
+      </router-link>
       </h2>
       <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>

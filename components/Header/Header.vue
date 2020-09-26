@@ -35,6 +35,9 @@
               <b-nav-item href="https://www.youtube.com/user/MoppedAnWeltAus" target="_blank">
                 <i class="fab fa-youtube" />
               </b-nav-item>
+              <b-nav-item href="https://www.twitch.tv/MoppedAnWeltAus" target="_blank">
+                <i class="fab fa-twitch" />
+              </b-nav-item>
             </b-navbar-nav>
           </b-navbar-nav>
         </b-collapse>

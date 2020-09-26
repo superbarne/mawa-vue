@@ -1,11 +1,7 @@
 @import '../../styles/mixins';
 
 .article-detail {
-    background-color: $white;
-    box-shadow: 0 0 10px rgba(20,20,20,.2);
-    margin-bottom: getSpace(2);
-    padding: getSpace(2);
-    color: $primary;
+    @include white-box;
 
     &__header {
         padding: 0 15px;
@@ -22,6 +18,7 @@
             margin: 0 0 getSpace(1) 0;
             text-transform: uppercase;
             font-weight: 700;
+            color: $primary;
         }
     }
 

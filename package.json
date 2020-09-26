@@ -20,6 +20,7 @@
     "nuxt": "^2.14.5",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
+    "vue-slick-carousel": "^1.0.6",
     "vue-infinite-loading": "^2.4.5"
   },
   "devDependencies": {

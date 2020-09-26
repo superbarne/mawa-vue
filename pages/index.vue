@@ -1,5 +1,6 @@
 <template>
   <b-container>
+    <ArticleSlider />
     <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
     <infinite-loading @infinite="infiniteHandler" />
   </b-container>

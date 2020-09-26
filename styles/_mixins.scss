@@ -1,2 +1,10 @@
 @import './_colors.scss';
 @import './_spacings.scss';
+
+@mixin white-box {
+    background-color: $white;
+    box-shadow: 0 0 10px rgba(20,20,20,.2);
+    margin-bottom: getSpace(3);
+    padding: getSpace(2);
+    color: $primary;
+}
