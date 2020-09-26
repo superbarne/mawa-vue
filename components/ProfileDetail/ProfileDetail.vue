@@ -10,19 +10,18 @@
     </div>
     <b-row>
       <b-col cols="12" md="8">
-        <pre>{{ profile }}</pre>
+        <!-- <pre>{{ profile }}</pre> -->
         <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
         <infinite-loading @infinite="$emit('posts-load-more', $event)" />
       </b-col>
       <b-col cols="12" md="4">
         <div class="sidebar">
           <div class="profile-detail__socials">
-            <a v-if="profile.fields.instagram" class="btn instagram" href="/">Instagram</a>
-            <a v-if="profile.fields.twitter" class="btn twitter" href="/">Twitter</a>
-            <a v-if="profile.fields.youtube" class="btn youtube" href="/">YouTube</a>
-            <a v-if="profile.fields.vimeo" class="btn vimeo" href="/">Vimeo</a>
+            <a v-if="profile.fields.instagram" class="btn instagram" :href="profile.fields.instagram" target="_blank">Instagram</a>
+            <a v-if="profile.fields.twitter" class="btn twitter" :href="profile.fields.twitter" target="_blank">Twitter</a>
+            <a v-if="profile.fields.youtube" class="btn youtube" :href="profile.fields.youtube" target="_blank">YouTube</a>
+            <a v-if="profile.fields.vimeo" class="btn vimeo" :href="profile.fields.vimeo" target="_blank">Vimeo</a>
           </div>
-          Sidebar
           <div
             v-if="profile.fields.facebook"
             class="fb-page item facebook"
@@ -31,7 +30,7 @@
             data-hide-cover="false"
             data-show-facepile="false"
             data-show-posts="true"
-            height="800px"
+            height="900px"
           />
         </div>
       </b-col>
