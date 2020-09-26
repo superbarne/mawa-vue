@@ -36,6 +36,11 @@
             width: 100%;
             padding: 10px;
 
+            &.website {
+                background-color: $dark-grey;
+                color: white;
+            }
+
             &.instagram {
                 background-color: $instagram;
                 color: white;

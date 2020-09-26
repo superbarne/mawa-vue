@@ -1,11 +1,6 @@
 <template>
   <b-container>
-    <div>
-      <nuxt-link v-for="category in categories" :key="category.sys.id" :to="`/profile/${type}/category/${category.fields.slug}`">
-        {{ category.fields.name }}
-      </nuxt-link>
-    </div>
-    <pre>{{ profiles }}</pre>
+    <ProfileOverview :profiles="profiles" :categories="categories" :type="type" />
   </b-container>
 </template>
 

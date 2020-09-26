@@ -10,13 +10,14 @@
     </div>
     <b-row>
       <b-col cols="12" md="8">
-        <!-- <pre>{{ profile }}</pre> -->
+        <pre>{{ profile }}</pre>
         <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
         <infinite-loading @infinite="$emit('posts-load-more', $event)" />
       </b-col>
       <b-col cols="12" md="4">
         <div class="sidebar">
           <div class="profile-detail__socials">
+            <a v-if="profile.fields.website" class="btn website" :href="profile.fields.website" target="_blank">Website</a>
             <a v-if="profile.fields.instagram" class="btn instagram" :href="profile.fields.instagram" target="_blank">Instagram</a>
             <a v-if="profile.fields.twitter" class="btn twitter" :href="profile.fields.twitter" target="_blank">Twitter</a>
             <a v-if="profile.fields.youtube" class="btn youtube" :href="profile.fields.youtube" target="_blank">YouTube</a>

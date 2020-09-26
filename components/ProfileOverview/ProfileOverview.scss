@@ -1,0 +1,23 @@
+@import '../../styles/mixins';
+
+.profile-overview {
+    &__filter {
+        margin-bottom: 15px;
+
+        .btn {
+            color: $dark-grey;
+            background-color: #fff;
+            border-color: #ccc;
+
+            + .btn {
+                margin-left: 5px;
+            }
+
+            &.nuxt-link-active {
+                background-color: $secondary;
+                color: #fff;
+                border-color: $secondary;
+            }
+        }
+    }
+}
