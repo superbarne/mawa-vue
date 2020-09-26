@@ -10,7 +10,7 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="#">
+            <b-nav-item to="/">
               Startseite
             </b-nav-item>
             <b-nav-item href="#">
