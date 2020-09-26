@@ -1,0 +1,20 @@
+@import '../../styles/mixins';
+
+.footer {
+    @include white-box;
+
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+}
