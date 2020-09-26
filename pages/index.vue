@@ -1,13 +1,8 @@
 <template>
   <b-container>
-<<<<<<< HEAD
     <ArticleSlider />
-    <ArticleTeaser />
-    <pre>{{ posts }}</pre>
-=======
     <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
     <infinite-loading @infinite="infiniteHandler" />
->>>>>>> 21711cf1181ad65487d2f6affd4c57002339cecf
   </b-container>
 </template>
 
