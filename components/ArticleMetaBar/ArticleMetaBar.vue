@@ -7,11 +7,13 @@
           {{ formatedCreatedAt }}
         </span>
       </li>
-      <li>
+      <li v-if="profiles.length > 0">
         <i class="fas fa-star" />
-        <a href="/">Profile</a>
+        <nuxt-link v-for="profile in profilesFiltered" :key="profile.sys.id" :to="`/profile/${profile.fields.type}/${profile.fields.slug}`">
+          {{ profile.fields.name }}
+        </nuxt-link>
       </li>
-      <li>
+      <li v-if="categories.length > 0">
         <i class="fas fa-tags" />
         <nuxt-link v-for="category in categories" :key="category.sys.id" :to="`/tag/${category.fields.slug}`">
           {{ category.fields.name }}
@@ -36,6 +38,11 @@ export default {
       required: false,
       default: () => []
     },
+    profiles: {
+      type: Array,
+      required: false,
+      default: () => []
+    },
     createdAt: {
       type: String,
       required: false,
@@ -43,6 +50,9 @@ export default {
     }
   },
   computed: {
+    profilesFiltered () {
+      return this.profiles.filter(item => item.fields)
+    },
     formatedCreatedAt () {
       return dayjs(this.createdAt).format('DD MMM YYYY')
     }

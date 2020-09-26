@@ -6,7 +6,7 @@
       <h1 class="article-detail__header-title">
         {{ post.fields.title }}
       </h1>
-      <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
+      <ArticleMetaBar class="article-teaser__header-meta" :profiles="post.fields.profiles" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-detail__body">
       <RichText :content="content" />
