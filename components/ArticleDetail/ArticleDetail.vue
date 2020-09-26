@@ -6,7 +6,7 @@
       <h1 class="article-detail__header-title">
         {{ post.fields.title }}
       </h1>
-      <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
+      <ArticleMetaBar class="article-teaser__header-meta" :profiles="post.fields.profiles" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-detail__body">
       <RichText :content="content" />
@@ -33,6 +33,7 @@ export default {
   computed: {
     headerImage () {
       const content = this.post.fields.content.content
+      if (!content[0]) { return null }
       const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
       if (hyperlink) {
         if (hyperlink.data.uri.includes('s3.eu-central')) {
@@ -43,6 +44,7 @@ export default {
     },
     headerYoutube () {
       const content = this.post.fields.content.content
+      if (!content[0]) { return null }
       const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
       if (hyperlink) {
         if (hyperlink.data.uri.includes('youtube.com/embed')) {
@@ -53,10 +55,12 @@ export default {
     },
     content () {
       const content = [...this.post.fields.content.content]
-      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
-      if (hyperlink) {
-        if (hyperlink.data.uri.includes('s3.eu-central') || hyperlink.data.uri.includes('youtube.com/embed')) {
-          content.shift()
+      if (content[0]) {
+        const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+        if (hyperlink) {
+          if (hyperlink.data.uri.includes('s3.eu-central') || hyperlink.data.uri.includes('youtube.com/embed')) {
+            content.shift()
+          }
         }
       }
       return {

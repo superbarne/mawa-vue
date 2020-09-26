@@ -1,8 +1,8 @@
 <template>
   <div class="article-slider">
     <VueSlickCarousel v-bind="settings">
-      <nuxt-link v-for="post in sliderPosts" :key="post.sys.id" class="article-slider__item" :to="`/post/${post.fields.slug}`">
-        <img src="https://via.placeholder.com/1080x400" alt="Image" class="article-slider__item-media">
+      <nuxt-link v-for="post in sliderPostsWithCover" :key="post.sys.id" class="article-slider__item" :to="`/post/${post.fields.slug}`">
+        <img :src="post.cover" alt="Image" class="article-slider__item-media">
         <div class="article-slider__item-caption">
           <h3 class="article-slider__item-title">
             {{ post.fields.title }}
@@ -59,6 +59,22 @@ export default {
           }
         ]
       }
+    }
+  },
+  computed: {
+    sliderPostsWithCover () {
+      return this.sliderPosts.map((post) => {
+        const content = post.fields.content.content
+        if (content[0]) {
+          const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+          if (hyperlink) {
+            if (hyperlink.data.uri.includes('s3.eu-central')) {
+              post.cover = hyperlink.data.uri
+            }
+          }
+        }
+        return post
+      })
     }
   }
 }
