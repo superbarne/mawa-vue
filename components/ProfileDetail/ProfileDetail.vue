@@ -1,7 +1,7 @@
 <template>
   <div class="profile-detail">
     <div class="profile-detail__cover">
-      <img src="https://via.placeholder.com/1080x400" alt="Image" class="profile-detail__cover-media">
+      <img v-if="headerImage" :src="headerImage" alt="Image" class="profile-detail__cover-media">
       <div class="profile-detail__cover-caption">
         <h3 class="profile-detail__cover-title">
           Fahrer
@@ -47,6 +47,19 @@ export default {
     posts: {
       type: Array,
       default: () => []
+    }
+  },
+  computed: {
+    headerImage () {
+      const content = this.profile.fields.content.content
+      if (!content[0]) { return null }
+      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+      if (hyperlink) {
+        if (hyperlink.data.uri.includes('s3.eu-central')) {
+          return hyperlink.data.uri
+        }
+      }
+      return null
     }
   }
 }
