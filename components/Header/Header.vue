@@ -13,13 +13,13 @@
             <b-nav-item to="/">
               Startseite
             </b-nav-item>
-            <b-nav-item href="#">
+            <b-nav-item to="/profile/marken/">
               Marken
             </b-nav-item>
-            <b-nav-item href="#">
+            <b-nav-item to="/profile/fahrer/">
               Fahrer
             </b-nav-item>
-            <b-nav-item href="#">
+            <b-nav-item to="/profile/events/">
               Events
             </b-nav-item>
           </b-navbar-nav>
