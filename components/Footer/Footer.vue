@@ -7,10 +7,10 @@
         <a href="/" class="footer__item">Über uns</a>
       </li>
       <li>
-        <a href="/" class="footer__item">Impressum</a>
+        <a href="/impressum" class="footer__item">Impressum</a>
       </li>
       <li>
-        <a href="/" class="footer__item">Datenschutz</a>
+        <a href="/datenschutz" class="footer__item">Datenschutz</a>
       </li>
     </ul>
   </footer>
