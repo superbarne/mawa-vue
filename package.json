@@ -19,7 +19,8 @@
     "dayjs": "^1.8.36",
     "nuxt": "^2.14.5",
     "sass": "^1.26.11",
-    "sass-loader": "^10.0.2"
+    "sass-loader": "^10.0.2",
+    "vue-infinite-loading": "^2.4.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
