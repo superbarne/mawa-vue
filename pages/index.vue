@@ -42,7 +42,6 @@
           </a>
           <Footer />
         </div>
-        </div>
       </b-col>
     </b-row>
   </b-container>
