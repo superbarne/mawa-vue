@@ -5,13 +5,18 @@
     box-shadow: 0 0 10px rgba(20,20,20,.2);
     margin-bottom: getSpace(3);
     padding: getSpace(2);
-    color: $primary;
 
     &__header {
         &-title {
             margin: 0 0 getSpace(1) 0;
             text-transform: uppercase;
             font-weight: 700;
+            color: $primary;
+
+            &:hover,
+            &:focus {
+                color: $secondary;
+            }
         }
     
         &-meta {
