@@ -1,5 +1,6 @@
 <template>
   <b-container>
+    <ArticleSlider />
     <ArticleTeaser />
     <pre>{{ posts }}</pre>
   </b-container>
