@@ -42,6 +42,10 @@ body {
 		}
 		@media (min-width: 768px) {
 			padding-left: 65px;
-		}
+        }
+        
+        .navbar-nav {
+            text-transform: uppercase;
+        }
 	}
 }
