@@ -33,6 +33,7 @@ export default {
   computed: {
     headerImage () {
       const content = this.post.fields.content.content
+      if (!content[0]) { return null }
       const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
       if (hyperlink) {
         if (hyperlink.data.uri.includes('s3.eu-central')) {
@@ -43,6 +44,7 @@ export default {
     },
     headerYoutube () {
       const content = this.post.fields.content.content
+      if (!content[0]) { return null }
       const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
       if (hyperlink) {
         if (hyperlink.data.uri.includes('youtube.com/embed')) {
@@ -53,10 +55,12 @@ export default {
     },
     content () {
       const content = [...this.post.fields.content.content]
-      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
-      if (hyperlink) {
-        if (hyperlink.data.uri.includes('s3.eu-central') || hyperlink.data.uri.includes('youtube.com/embed')) {
-          content.shift()
+      if (content[0]) {
+        const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+        if (hyperlink) {
+          if (hyperlink.data.uri.includes('s3.eu-central') || hyperlink.data.uri.includes('youtube.com/embed')) {
+            content.shift()
+          }
         }
       }
       return {
