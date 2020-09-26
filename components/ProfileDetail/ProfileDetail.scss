@@ -8,9 +8,9 @@
         &-caption {
             @media (min-width: 576px) {                
                 position: absolute;
-                left: 10px;
-                right: 10px;
-                bottom: 10px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
             }
         }
 
@@ -26,6 +26,34 @@
 
         &-media {
             width: 100%;
+        }
+    }
+
+    &__socials {
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+
+            &.instagram {
+                background-color: $instagram;
+                color: white;
+            }
+    
+            &.twitter {
+                background-color: $twitter;
+                color: white;
+            }
+    
+            &.youtube {
+                background-color: $youtube;
+                color: white;
+            }
+    
+            &.vimeo {
+                background-color: $vimeo;
+                color: white;
+            }
         }
     }
 }
