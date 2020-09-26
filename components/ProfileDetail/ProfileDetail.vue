@@ -11,6 +11,7 @@
     <b-row>
       <b-col cols="12" md="8">
         <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
+        <infinite-loading @infinite="$emit('posts-load-more', $event)" />
       </b-col>
       <b-col cols="12" md="4">
         <div class="sidebar">

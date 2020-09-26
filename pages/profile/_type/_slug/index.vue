@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <ProfileDetail :profile="profile" :posts="posts" />
+    <ProfileDetail :profile="profile" :posts="posts" @posts-load-more="infiniteHandler" />
   </b-container>
 </template>
 
