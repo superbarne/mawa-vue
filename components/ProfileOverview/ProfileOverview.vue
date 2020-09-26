@@ -1,6 +1,9 @@
 <template>
   <div class="profile-overview">
     <div class="profile-overview__filter">
+      <nuxt-link :to="`/profile/${type}`" class="btn">
+        Alle
+      </nuxt-link>
       <nuxt-link v-for="category in categories" :key="category.sys.id" class="btn" :to="`/profile/${type}/category/${category.fields.slug}`">
         {{ category.fields.name }}
       </nuxt-link>

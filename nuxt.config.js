@@ -40,6 +40,11 @@ export default {
     'bootstrap-vue/nuxt'
   ],
 
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false // Or `bvCSS: false`
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   },
