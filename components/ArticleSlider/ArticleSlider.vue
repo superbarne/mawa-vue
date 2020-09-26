@@ -1,30 +1,14 @@
 <template>
   <div class="article-slider">
     <VueSlickCarousel v-bind="settings">
-      <div class="article-slider__item">
+      <nuxt-link v-for="post in sliderPosts" :key="post.sys.id" class="article-slider__item" :to="`/post/${post.fields.slug}`">
         <img src="https://via.placeholder.com/1080x400" alt="Image" class="article-slider__item-media">
         <div class="article-slider__item-caption">
           <h3 class="article-slider__item-title">
-            Headline 3
+            {{ post.fields.title }}
           </h3>
         </div>
-      </div>
-      <div class="article-slider__item">
-        <img src="https://via.placeholder.com/1080x400" alt="Image" class="article-slider__item-media">
-        <div class="article-slider__item-caption">
-          <h3 class="article-slider__item-title">
-            Headline 3
-          </h3>
-        </div>
-      </div>
-      <div class="article-slider__item">
-        <img src="https://via.placeholder.com/1080x400" alt="Image" class="article-slider__item-media">
-        <div class="article-slider__item-caption">
-          <h3 class="article-slider__item-title">
-            Headline 3
-          </h3>
-        </div>
-      </div>
+      </nuxt-link>
     </VueSlickCarousel>
   </div>
 </template>
@@ -39,6 +23,13 @@ import VueSlickCarousel from 'vue-slick-carousel'
 
 export default {
   components: { VueSlickCarousel },
+  props: {
+    sliderPosts: {
+      type: Array,
+      required: false,
+      default: () => []
+    }
+  },
   data () {
     return {
       settings: {

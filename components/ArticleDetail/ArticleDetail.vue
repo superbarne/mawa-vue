@@ -1,23 +1,69 @@
 <template>
   <article class="article-detail">
-    <img src="https://via.placeholder.com/600x400" alt="Image" class="article-detail__media">
+    <img v-if="headerImage" :src="headerImage" alt="Image" class="article-detail__media">
+    <ArticleVideoYoutube v-if="headerYoutube" :uri="headerYoutube" class="article-detail__media" />
     <header class="article-detail__header">
       <h1 class="article-detail__header-title">
-        {title} Detail - Headline 1
+        {{ post.fields.title }}
       </h1>
-      <ArticleMetaBar class="article-detail__header-meta" />
+      <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-detail__body">
-      <h2>Body - Headline 2</h2>
-      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem sequi eaque, ad harum autem vitae, eligendi molestias obcaecati tempore fugit alias asperiores ipsa ab necessitatibus sunt officiis id illo itaque?</p>
+      <RichText :content="content" />
     </section>
-    <section class="article-detail__footer">
+    <!--section class="article-detail__footer">
       <h2>Footer - Headline 2</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime saepe ex eveniet sint. Pariatur qui modi blanditiis id culpa repudiandae expedita cupiditate aspernatur totam? In corporis architecto ut molestiae aliquam!</p>
-    </section>
+    </section-->
   </article>
 </template>
 
 <style lang="scss">
   @import "./ArticleDetail.scss";
 </style>
+
+<script>
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    headerImage () {
+      const content = this.post.fields.content.content
+      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+      if (hyperlink) {
+        if (hyperlink.data.uri.includes('s3.eu-central')) {
+          return hyperlink.data.uri
+        }
+      }
+      return null
+    },
+    headerYoutube () {
+      const content = this.post.fields.content.content
+      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+      if (hyperlink) {
+        if (hyperlink.data.uri.includes('youtube.com/embed')) {
+          return hyperlink.data.uri
+        }
+      }
+      return null
+    },
+    content () {
+      const content = [...this.post.fields.content.content]
+      const hyperlink = content[0].content.find(item => item.nodeType === 'hyperlink')
+      if (hyperlink) {
+        if (hyperlink.data.uri.includes('s3.eu-central') || hyperlink.data.uri.includes('youtube.com/embed')) {
+          content.shift()
+        }
+      }
+      return {
+        ...this.post.fields.content,
+        content
+      }
+    }
+  }
+}
+</script>

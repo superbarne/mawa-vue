@@ -6,7 +6,6 @@
           {{ post.fields.title }}
         </h2>
       </router-link>
-      </h2>
       <ArticleMetaBar class="article-teaser__header-meta" :categories="post.fields.categories" :created-at="post.fields.createdAt" />
     </header>
     <section class="article-teaser__body">

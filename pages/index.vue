@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <ArticleSlider />
+    <ArticleSlider :slider-posts="sliderPosts" />
     <b-row>
       <b-col cols="12" md="8">
         <div class="main">
@@ -57,11 +57,18 @@ export default {
     const { items: posts } = await client.getEntries({
       content_type: 'post',
       limit,
-      order: '-sys.createdAt'
+      order: '-fields.createdAt'
+    })
+
+    const sliderCatagoryId = '563e3302f6b2ab1d1a18938c'
+    const { items: sliderPosts } = await client.getEntries({
+      content_type: 'post',
+      'fields.categories.sys.id': sliderCatagoryId
     })
 
     return {
-      posts
+      posts,
+      sliderPosts
     }
   },
   data () {
@@ -76,7 +83,7 @@ export default {
         content_type: 'post',
         limit,
         skip: this.skip,
-        order: '-sys.createdAt'
+        order: '-fields.createdAt'
       })
       if (posts.length) {
         this.posts.push(...posts)
