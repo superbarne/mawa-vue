@@ -8,9 +8,9 @@
         {{ category.fields.name }}
       </nuxt-link>
     </div>
-    <div v-for="profile in profiles" :key="profile.sys.id">
-      <ProfileTeaser :profile="profile" />
-    </div>
+    <b-row>
+      <ProfileTeaser v-for="profile in profiles" :key="profile.sys.id" class="col-12 col-sm-6 col-lg-4" :profile="profile" />
+    </b-row>
   </div>
 </template>
 
