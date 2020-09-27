@@ -2,7 +2,7 @@
 
 .profile-overview {
     &__filter {
-        margin-bottom: 15px;
+        margin-bottom: $grid-gutter-width;
 
         .btn {
             color: $dark-grey;

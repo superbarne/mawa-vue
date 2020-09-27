@@ -4,7 +4,10 @@
 @mixin white-box {
     background-color: $white;
     box-shadow: 0 0 10px rgba(20,20,20,.2);
-    margin-bottom: getSpace(3);
+    margin-bottom: $grid-gutter-width;
     padding: getSpace(2);
     color: $primary;
 }
+
+// Bootstrap gutter width //
+$grid-gutter-width: 10px;

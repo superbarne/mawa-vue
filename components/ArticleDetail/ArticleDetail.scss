@@ -4,7 +4,7 @@
     @include white-box;
 
     &__header {
-        padding: 0 15px;
+        padding: 0 $grid-gutter-width;
         margin-top: 10px;
         margin-bottom: 10px;
 
@@ -23,7 +23,7 @@
     }
 
     &__body {
-        padding: 0 15px;
+        padding: 0 $grid-gutter-width;
         margin-bottom: 10px;
 
 		@media (min-width: 768px) {
@@ -39,7 +39,7 @@
     }
 
     &__footer {
-        padding: 0 15px;
+        padding: 0 $grid-gutter-width;
         margin-bottom: 10px;
 
 		@media (min-width: 768px) {
