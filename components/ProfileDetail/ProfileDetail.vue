@@ -22,6 +22,7 @@
             <a v-if="profile.fields.twitter" class="btn twitter" :href="profile.fields.twitter" target="_blank">Twitter</a>
             <a v-if="profile.fields.youtube" class="btn youtube" :href="profile.fields.youtube" target="_blank">YouTube</a>
             <a v-if="profile.fields.vimeo" class="btn vimeo" :href="profile.fields.vimeo" target="_blank">Vimeo</a>
+            <a v-if="profile.fields.twitch" class="btn twitch" :href="profile.fields.twitch" target="_blank">Twitch</a>
           </div>
           <div
             v-if="profile.fields.facebook"

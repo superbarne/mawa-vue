@@ -60,6 +60,11 @@
                 background-color: $vimeo;
                 color: white;
             }
+
+            &.twitch {
+                background-color: $twitch;
+                color: white;
+            }
         }
     }
 }
