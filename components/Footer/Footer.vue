@@ -4,7 +4,7 @@
     <p>Mopped an, Welt aus!!! © {{ year }}</p>
     <ul>
       <li>
-        <a href="/" class="footer__item">Über uns</a>
+        <a href="/profile/fahrer/mawa" class="footer__item">Über uns</a>
       </li>
       <li>
         <a href="/impressum" class="footer__item">Impressum</a>

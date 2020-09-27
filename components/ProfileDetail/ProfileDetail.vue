@@ -10,7 +10,7 @@
     </div>
     <b-row>
       <b-col cols="12" md="8">
-        <pre>{{ profile }}</pre>
+        <!-- <pre>{{ profile }}</pre> -->
         <ArticleTeaser v-for="post in posts" :key="post.sys.id" :post="post" />
         <infinite-loading @infinite="$emit('posts-load-more', $event)" />
       </b-col>
