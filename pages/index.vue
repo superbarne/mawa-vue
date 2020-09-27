@@ -50,7 +50,7 @@
 <script>
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
-const limit = 3
+const limit = 5
 export default {
   async asyncData ({ env }) {
     const { items: posts } = await client.getEntries({
