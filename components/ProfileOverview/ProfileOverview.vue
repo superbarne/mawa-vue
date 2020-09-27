@@ -1,6 +1,6 @@
 <template>
   <div class="profile-overview">
-    <div class="profile-overview__filter">
+    <div v-if="categories.length > 0" class="profile-overview__filter">
       <nuxt-link :to="`/profile/${type}`" class="btn">
         Alle
       </nuxt-link>

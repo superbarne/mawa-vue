@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-teaser">
+  <nuxt-link class="profile-teaser" :to="`/profile/${profile.fields.type}/${profile.fields.slug}`">
     <div class="profile-teaser__cover">
       <img v-if="headerImage" :src="headerImage" alt="Image" class="profile-teaser__cover-media">
       <div class="profile-teaser__cover-caption">
@@ -8,7 +8,7 @@
         </h3>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <style lang="scss">
