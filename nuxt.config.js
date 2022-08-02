@@ -1,5 +1,8 @@
-
-const config = require('./.contentful.json')
+let config
+try {
+  // Load the Contentful config from the .contentful.json
+  config = require('./.contentful.json')
+} catch (_) {}
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -50,7 +53,7 @@ export default {
   },
 
   env: {
-    CTF_SPACE_ID: config.spaceId,
-    CTF_CDA_ACCESS_TOKEN: config.accessToken
+    CTF_SPACE_ID: process.env.CONTENTFUL_SPACE_ID || config.spaceId,
+    CTF_CDA_ACCESS_TOKEN: process.env.CONTENTFUL_DELIVERY_TOKEN || config.accessToken
   }
 }
